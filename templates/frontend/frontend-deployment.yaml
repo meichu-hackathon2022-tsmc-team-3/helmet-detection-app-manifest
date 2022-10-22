@@ -23,4 +23,6 @@ spec:
             value: http://{{ .Values.app.userManagementBackend.host }}/api/v1
           - name: VUE_APP_EVENT_MANAGEMENT_URL
             value: http://{{ .Values.app.eventManagementBackend.host }}/api/v1
+          - name: NODE_OPTIONS
+            value: --openssl-legacy-provider
 
