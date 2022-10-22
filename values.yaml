@@ -4,7 +4,7 @@ app:
     replicaCount: 2
     image:
       repo: justin89721/event-management-service
-      tag: a0fea63f65d119d376708c3a2646d46ef3730051
+      tag: 30d5efac012d64c83af2e57ebd22f77241d5588f
     host: event.tsmc.n0b.me
   userManagementBackend:
     replicaCount: 2
