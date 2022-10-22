@@ -5,7 +5,7 @@ app:
     image:
       repo: noball/event-management-service
       tag: latest
-    host: event.hackathon.n0b.me
+    host: event.tsmc.n0b.me
   frontend:
     replicaCount: 2
-    host: ui.hackathon.n0b.me
+    host: ui.tsmc.n0b.me
