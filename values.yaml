@@ -6,6 +6,12 @@ app:
       repo: noball/event-management-service
       tag: latest
     host: event.tsmc.n0b.me
+  userManagementBackend:
+    replicaCount: 2
+    image:
+      repo: noball/user-management-service
+      tag: latest
+    host: user.tsmc.n0b.me
   frontend:
     replicaCount: 2
     host: ui.tsmc.n0b.me
