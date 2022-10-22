@@ -16,5 +16,5 @@ app:
     replicaCount: 2
     host: ui.tsmc.n0b.me
     image:
-      repo: nginx
-      tag: latest
+      repo: justin89721/meichuhackathon-frontend
+      tag: c2675bf9da6cb42b3d335de312d3fb08a899d9fe
