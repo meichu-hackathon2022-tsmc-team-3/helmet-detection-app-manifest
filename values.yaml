@@ -9,8 +9,8 @@ app:
   userManagementBackend:
     replicaCount: 2
     image:
-      repo: noball/user-management-service
-      tag: latest
+      repo: justin89721/user-management-service
+      tag: 2a92b99320fe50aa78240dd4d93b2d72e706a153
     host: user.tsmc.n0b.me
   frontend:
     replicaCount: 2
