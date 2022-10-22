@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: user-management
-          image: {{ .Values.app.userManagementBackend.image.repo }}:{{ .Values.app.eventManagementBackend.image.tag }}
+          image: {{ .Values.app.userManagementBackend.image.repo }}:{{ .Values.app.userManagementBackend.image.tag }}
           ports:
             - containerPort: 3000
           env:
