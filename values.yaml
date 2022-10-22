@@ -1,0 +1,11 @@
+app:
+  namespace: helmetapp
+  eventManagementBackend:
+    replicaCount: 2
+    image:
+      repo: noball/event-management-service
+      tag: latest
+    host: event.hackathon.n0b.me
+  frontend:
+    replicaCount: 2
+    host: ui.hackathon.n0b.me

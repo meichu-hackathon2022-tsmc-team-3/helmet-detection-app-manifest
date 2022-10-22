@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: event-management-deployment
+  namespace: {{ .Values.app.namespace }}
+spec:
+  replicas: {{ .Values.app.eventManagementBackend.replicaCount }}
+  selector:
+    matchLabels:
+      app: event-management
+  template:
+    metadata:
+      labels:
+        app: event-management
+    spec:
+      containers:
+        - name: event-management
+          image: {{ .Values.app.eventManagementBackend.image.repo }}:{{ .Values.app.eventManagementBackend.image.tag }}
+          ports:
+            - containerPort: 3000
+          env:
+          - name: MONGO_HOST
+            valueFrom:
+              secretKeyRef:
+                name: api-mongo-secret
+                key: MONGO_HOST
+          - name: MONGO_USER
+            valueFrom:
+              secretKeyRef:
+                name: api-mongo-secret
+                key: MONGO_USER
+          - name: MONGO_PASS
+            valueFrom:
+              secretKeyRef:
+                name: api-mongo-secret
+                key: MONGO_PASS
+          - name: MONGO_PORT
+            value: "27017"
+          - name: MONGO_DB
+            value: "user-management"
+          - name: CLIENT
+            value: {{ .Values.app.frontend.host }}
+          - name: ENV
+            value: "PROD"
+
