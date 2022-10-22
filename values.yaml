@@ -15,3 +15,6 @@ app:
   frontend:
     replicaCount: 2
     host: ui.tsmc.n0b.me
+    image:
+      repo: nginx
+      tag: latest
