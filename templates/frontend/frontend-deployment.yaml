@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  namespace: {{ .Values.app.namespace }}
+spec:
+  replicas: {{ .Values.app.frontend.replicaCount }}
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: {{ .Values.app.frontend.image.repo }}:{{ .Values.app.frontend.image.tag }}
+          ports:
+            - containerPort: 8080
+          env:
+          - name: VUE_APP_USER_MANAGEMENT_URL
+            value: http://{{ .Values.app.userManagementBackend.host }}/api/v1
+          - name: VUE_APP_EVENT_MANAGEMENT_URL
+            value: http://{{ .Values.app.eventManagementBackend.host }}/api/v1
+
