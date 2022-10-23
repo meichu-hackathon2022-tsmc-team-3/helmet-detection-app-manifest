@@ -17,7 +17,7 @@ app:
     host: ui.tsmc.n0b.me
     image:
       repo: justin89721/meichuhackathon-frontend
-      tag: 72862da25aded10b888a5f459101d640b410e0fb
+      tag: aae8a7f0f364baf6af4d6462367918bd4c8cbd91
   alertBot:
     replicaCount: 2
     host: bot.tsmc.n0b.me
@@ -28,5 +28,5 @@ app:
     replicaCount: 2
     host: handler.tsmc.n0b.me
     image:
-      repo: nginx
-      tag: latest
+      repo: justin89721/event-handler-service
+      tag: 24c7ba91997654e0dbbb921b2041b6a8f4cf4a88
