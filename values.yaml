@@ -17,7 +17,7 @@ app:
     host: ui.tsmc.n0b.me
     image:
       repo: justin89721/meichuhackathon-frontend
-      tag: aae8a7f0f364baf6af4d6462367918bd4c8cbd91
+      tag: bb673f67ed4b6301efcb80799c492a3b309cf009
   alertBot:
     replicaCount: 2
     host: bot.tsmc.n0b.me
