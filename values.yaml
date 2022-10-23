@@ -22,5 +22,5 @@ app:
     replicaCount: 2
     host: bot.tsmc.n0b.me
     image:
-      repo: nginx
-      tag: latest
+      repo: justin89721/helmet-alert-bot
+      tag: b86e62e7f610c2db0ae94816353cc0cda0a405a3
