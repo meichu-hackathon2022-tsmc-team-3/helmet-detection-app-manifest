@@ -17,7 +17,7 @@ spec:
         - name: event-handler
           image: {{ .Values.app.eventHandler.image.repo }}:{{ .Values.app.eventHandler.image.tag }}
           ports:
-            - containerPort: 3000
+            - containerPort: 8000
           envFrom:
           - secretRef:
               name: handler-secret
