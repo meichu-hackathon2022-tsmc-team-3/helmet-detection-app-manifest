@@ -28,5 +28,5 @@ app:
     replicaCount: 2
     host: handler.tsmc.n0b.me
     image:
-      repo: nginx
-      tag: latest
+      repo: justin89721/event-handler-service
+      tag: 781639118ac8e63caa59196d6e84b8d20a55bb9f
