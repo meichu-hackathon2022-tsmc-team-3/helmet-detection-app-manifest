@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alert-chatbot-deployment
+  namespace: {{ .Values.app.namespace }}
+spec:
+  replicas: {{ .Values.app.userManagementBackend.replicaCount }}
+  selector:
+    matchLabels:
+      app: alert-chatbot
+  template:
+    metadata:
+      labels:
+        app: alert-chatbot
+    spec:
+      containers:
+        - name: alert-chatbot
+          image: {{ .Values.app.alertBot.image.repo }}:{{ .Values.app.alertBot.image.tag }}
+          ports:
+            - containerPort: 3000
+          envFrom:
+          - secretRef:
+              name: chatbot-secret
