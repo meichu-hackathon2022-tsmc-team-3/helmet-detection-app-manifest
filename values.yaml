@@ -29,4 +29,4 @@ app:
     host: handler.tsmc.n0b.me
     image:
       repo: justin89721/event-handler-service
-      tag: 3ff13e582c4614bd953001463f27fb8fcab643e6
+      tag: e6af80ece1b9b78cef74962fe82cd01b01ae087f
