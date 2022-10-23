@@ -9,7 +9,7 @@
 
 1. change config in values.yaml
 
-2. setup application db secret
+2. setup application db secret and chatbot secret
 
 ```
 apiVersion: v1
@@ -24,11 +24,25 @@ data:
   MONGO_USER: <MONGO_USER>
   MONGO_PASS: <MONGO_PASSWORD>
 ```
+```
+apiVersion: v1
+kind: Secret
+metadata:
+  name: chatbot-secret
+  namespace: helmetapp
+data:
+  ROCKET_CHAT_HOST: <CHAT_SERVER_URL>
+  BOT_USER: <BOT_USERNAME>
+  BOT_PASS: <BOT_PASSWORD>
+```
 
-3. apply db secret
+
+
+3. apply secret
 
 ```
-kubectl apply -f <your_secret.yaml>
+kubectl apply -f <your_db_secret.yaml>
+kubectl apply -f <your_bot_secret.yaml>
 ```
 
 4. install helm application
