@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: event-handler-deployment
+  namespace: {{ .Values.app.namespace }}
+spec:
+  replicas: {{ .Values.app.eventHandler.replicaCount }}
+  selector:
+    matchLabels:
+      app: event-handler
+  template:
+    metadata:
+      labels:
+        app: event-handler
+    spec:
+      containers:
+        - name: event-handler
+          image: {{ .Values.app.eventHandler.image.repo }}:{{ .Values.app.eventHandler.image.tag }}
+          ports:
+            - containerPort: 3000
+          envFrom:
+          - secretRef:
+              name: handler-secret
